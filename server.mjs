@@ -19,13 +19,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || "0.0.0.0";
 
-// Middleware
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "http://127.0.0.1:5173", "https://mellow-tartufo-8c3fb5.netlify.app"],
-    credentials: true,
-  })
-);
+// Configure CORS
+const corsOptions = {
+  origin: [
+    'https://67b4fe234891eb00898b9747--mellow-tartufo-8c3fb5.netlify.app/',
+    'http://localhost:3000', 
+    'https://mellow-tartufo-8c3fb5.netlify.app/',
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
