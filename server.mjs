@@ -22,9 +22,9 @@ const HOST = process.env.HOST || "0.0.0.0";
 // Configure CORS
 const corsOptions = {
   origin: [
-    'https://67b4fe234891eb00898b9747--mellow-tartufo-8c3fb5.netlify.app/',
+    'https://67b4fe234891eb00898b9747--mellow-tartufo-8c3fb5.netlify.app',
     'http://localhost:3000', 
-    'https://mellow-tartufo-8c3fb5.netlify.app/',
+    'https://mellow-tartufo-8c3fb5.netlify.app',
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
